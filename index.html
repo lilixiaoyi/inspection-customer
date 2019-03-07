@@ -31,6 +31,11 @@
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <style>
+        html,body{
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+        }
         #weatherWidget .currentDesc {
             color: #ffffff !important;
         }
@@ -71,31 +76,43 @@
         #cellPaiChart {
             height: 160px;
         }
+
+        #right-panel{
+        
+            height: 100%;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+        }
+       
     </style>
 </head>
 
-<body>
+<body >
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>我的主页</a>
+                        <a href="index-content.html" target="myiframe"><i class="menu-icon fa fa-laptop"></i>我的主页</a>
                     </li>
                     <li>
-                        <a href="check.html"><i class="menu-icon fa fa-bolt"></i>我要下单</a>
+                        <a href="check-content.html" target="myiframe"><i class="menu-icon fa fa-bolt"></i>我要下单</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-file-text-o"></i>我的订单</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="orders-all.html">全部</a></li>
-                            <li><a href="orders-draft.html">草稿</a></li>
+                            <li><a href="orders-all-content.html" target="myiframe">全部</a></li>
+                            <li><a href="orders-draft.html" target="myiframe">草稿</a></li>
 
-                            <li><a href="orders-finished.html">已完成</a></li>
-                            <li><a href="orders-unfinished.html">未完成</a></li>
-                            <li><a href="orders-cancel.html">已取消</a></li>
+                            <li><a href="orders-finished.html" target="myiframe">已完成</a></li>
+                            <li><a href="orders-unfinished.html" target="myiframe">未完成</a></li>
+                            <li><a href="orders-cancel.html" target="myiframe">已取消</a></li>
 
                         </ul>
                     </li>
@@ -103,31 +120,31 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-file-text"></i>我的报告</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="reports.html">验货报告</a></li>
+                            <li><a href="reports.html" target="myiframe">验货报告</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-edit"></i>我的评价</a>
+                            aria-expanded="false" target="myiframe"> <i class="menu-icon fa fa-edit"></i>我的评价</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="evaluation-unfinished.html">待评价</a></li>
-                            <li><a href="evaluation-finished.html">已评价</a></li>
+                            <li><a href="evaluation-unfinished.html" target="myiframe">待评价</a></li>
+                            <li><a href="evaluation-finished.html" target="myiframe">已评价</a></li>
                         </ul>
                     </li>
 
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        <a href="#" class="dropdown-toggle" target="myiframe" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-thumbs-down"></i>我的投诉</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="complaint-lists.html">投诉列表</a></li>
+                            <li><a href="complaint-lists.html" target="myiframe">投诉列表</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        <a href="#" target="myiframe" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>数据报表</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#">工厂分析</a></li>
+                            <li><a href="#" target="myiframe">工厂分析</a></li>
                         </ul>
                     </li>
 
@@ -135,26 +152,26 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-user"></i>我的账户</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="wallet.html">我的钱包</a></li>
-                            <li><a href="integral.html">我的等级与积分</a></li>
-                            <li><a href="personal.html">账户设置</a></li>
+                            <li><a href="wallet.html" target="myiframe">我的钱包</a></li>
+                            <li><a href="integral.html" target="myiframe">我的等级与积分</a></li>
+                            <li><a href="personal.html" target="myiframe">账户设置</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="mynews.html"> <i class="menu-icon fa fa-bell"></i>我的消息 </a>
+                        <a href="mynews.html" target="myiframe"> <i class="menu-icon fa fa-bell"></i>我的消息 </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-mail-forward"></i>业务推荐 </a>
+                        <a href="#" target="myiframe"> <i class="menu-icon fa fa-mail-forward"></i>业务推荐 </a>
                     </li>
 
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        <a href="#" target="myiframe" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-list-alt"></i>资料管理</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#">发票资料</a></li>
-                            <li><a href="#">工厂资料</a></li>
-                            <li><a href="#">报告接收邮箱</a></li>
+                            <li><a href="#" target="myiframe">发票资料</a></li>
+                            <li><a href="#" target="myiframe">工厂资料</a></li>
+                            <li><a href="#" target="myiframe">报告接收邮箱</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -163,7 +180,7 @@
     </aside>
     <!-- /#left-panel -->
     <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel" style="height:100%">
         <!-- Header-->
         <header id="header" class="header">
             <div class="top-left">
@@ -216,216 +233,16 @@
         </header>
         <!-- /#header -->
         <!-- Content -->
-        <div class="content">
-
-          <iframe name="myiframe" src="admin-index-content.jsp"
-      frameborder="no" scrolling="auto" style="height: 100%; width: 100%;"
-      allowtransparency="true"> </iframe>
+        <div class="content" style="width:100%;height:100%;padding: 0px;background:#f1f2f7">
+            <div style="width:100%;height:100%">
+                    <iframe name="myiframe" src="index-content.html"
+                    frameborder="no" scrolling="auto" style="height: 100%; width: 100%;"
+                    allowtransparency="true"> </iframe>
+            </div>
+       
             <!-- Animated -->
             <div class="animated fadeIn">
-                <!-- Widgets  -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-1">
-                                        <i class="pe-7s-cash"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text">$<span class="count">23569</span></div>
-                                            <div class="stat-heading">美元余额</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-2">
-                                        <i class="pe-7s-cash"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text">￥<span class="count">3435</span></div>
-                                            <div class="stat-heading">人民币余额</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-3">
-                                        <i class="pe-7s-browser"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">349</span></div>
-                                            <div class="stat-heading">我的积分</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-4">
-                                        <i class="pe-7s-cart"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
-                                            <div class="stat-heading">我的订单数</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Widgets -->
-                <!--table-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">未完成订单</strong>
-                                <a href='orders-all.html'>
-                                    <small><span class="badge badge-success float-right mt-1">全部订单 ></span></small>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>订单号</th>
-                                            <th>验货日期</th>
-                                            <th>工厂名称</th>
-                                            <th>产品订单号</th>
-                                            <th>产品货号</th>
-                                            <th>产品名称</th>
-                                            <th>服务类型</th>
-                                            <th>状态</th>
-                                            <th>操作</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!--/table-->
-                <!--fast-orders-->
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header"><strong class="card-title">快速下单</strong></div>
-                            <div class="card-body">
-                                <form action="#" method="post" class="form-horizontal">
-                                    <div class="row form-group">
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">请选择服务类型</option>
-                                                <option value="1">DPI</option>
-                                                <option value="2">FRI</option>
-                                                <option value="3">FUI</option>
-                                            </select></div>
-                                        <div class="col col-md-6"><input type="text" placeholder="请输入时间"
-                                                class="form-control"></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">请选择产品类目</option>
-                                                <option value="1">电子机械类</option>
-                                                <option value="2">服装纺织类</option>
-                                                <option value="3">其他</option>
-                                            </select></div>
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">请选择产品类型</option>
-
-                                            </select></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">国家</option>
-                                                <option value="1">中国</option>
-                                                <option value="2">美国</option>
-                                                <option value="3">印度</option>
-                                            </select></div>
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">省份</option>
-
-                                            </select></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">城市</option>
-                                            </select></div>
-                                        <div class="col col-md-6"><select name="select" id="select" class="form-control">
-                                                <option value="0">区县</option>
-                                            </select></div>
-                                    </div>
-                                    <div class="row form-group">
-                                            <div class="col col-md-12">
-                                            <textarea name="textarea-input" id="textarea-input" rows="2" placeholder="请输入详细地址" class="form-control"></textarea>
-                                            </div>
-                                    </div>
-                                    <div>
-                                            <button type="submit" class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> 提交订单
-                                                </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!--/card-->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">订单完成率</strong>
-                            </div>
-                            <div class="card-body">
-                                <div class="mx-auto d-block">
-                                    <div class="progress mb-3">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
-                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="card-text text-sm-center">
-                                    <p><i class="fa fa-square" style="color:goldenrod"></i>已完成订单数：<span>30</span>单</p>
-                                    <p>订单总数：<span>40</span>单</p>
-                                    <p>订单完成率：<span>75</span>%</p>
-                                </div>
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--/fast-orders-->
+               
 
                 <!-- Modal - Calendar - Add New Event -->
                 <div class="modal fade none-border" id="event-modal">
@@ -496,7 +313,7 @@
             <!-- .animated -->
         </div>
         <!-- /.content -->
-        <div class="clearfix"></div>
+      
         <!-- Footer -->
 
         <!-- /.site-footer -->
