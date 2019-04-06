@@ -561,10 +561,10 @@ aside.left-panel {
                 &.menu-item-has-children {
                     overflow: hidden;
                     a {
-                        // &:before {
-                        //     content: '';
-                        //     display: none;
-                        // }
+                         &:before {
+                             content: '';
+                             display: none;
+                         }
                     }
                     ul {
                         padding-left: 0;
